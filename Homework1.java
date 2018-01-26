@@ -23,34 +23,7 @@ public class Homework1 {
 		postfixExp = exp;
 		stack = new Stack<String>();
 		
-		for (int i=0;i<postfixExp.length();i++){
-			
-			str = postfixExp.substring(i,i+1);
-			if(str.matches("[0-9]"))
-				postfixExp += str;
-			else if (isOperator(str)){
-				
-				if (stack.isEmpty()){
-					stack.push(str);
-				}
-				else{
-					
-					String stackTop = stack.peek();
-					while (Calculate1(stackTop,str).equals(stackTop)&& !(stack.isEmpty())){
-						postfixExp += stack.pop();
-						if (!(stack.isEmpty()))
-							stackTop = stack.peek();
-					}
-					stack.push(str);
-				}
-			}
-		}
 		
-		while(!(stack.isEmpty()))
-			postfixExp += stack.pop();
-		
-		returnS=infixExp;
-	}
 	private Object Calculate1(String stackTop, String str) {
 		// TODO Auto-generated method stub
 		return null;
