@@ -1,4 +1,4 @@
-public class Maths {
+public class Math {
 
     double add(double a, double b) {
         double answer = a+b;
