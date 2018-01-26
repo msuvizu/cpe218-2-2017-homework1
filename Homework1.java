@@ -84,15 +84,15 @@ public class Homework1 {
 			    Math Maths = new Math();
 		        
 		        switch (n.Value) {
-	            case "+": answer1 = Maths.add(inputA, inputB);
+	            case "+": answer1 = Math.add(inputA, inputB);
 	                      break;
-	            case "-": answer1 = Maths.subtract(inputA, inputB);
+	            case "-": answer1 = Math.subtract(inputA, inputB);
 	                      break;
-	            case "*": answer1 = Maths.multiply(inputA, inputB);
+	            case "*": answer1 = Math.multiply(inputA, inputB);
 	                      break;
-	            case "/": answer1 = Maths.divide(inputA, inputB);
+	            case "/": answer1 = Math.divide(inputA, inputB);
 	                      break;
-	            case "^": answer1 = Maths.power(inputA, inputB);
+	            case "^": answer1 = Math.power(inputA, inputB);
 	                      break;
 		        }
 				return answer;
