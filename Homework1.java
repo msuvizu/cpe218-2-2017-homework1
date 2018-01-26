@@ -3,7 +3,7 @@ import java.util.Scanner;
 import java.util.Stack;
 
 
-public class Homework11 {
+public class Homework1 {
 	
 	private Stack<String> stack;
 	public static Stack<String> stack1 = new Stack<String>();
@@ -16,7 +16,7 @@ public class Homework11 {
 
 	
 	public String returnS;
-	public Homework11(String exp){
+	public Homework1(String exp){
 		
 		
 		String str = "";
@@ -108,7 +108,7 @@ public class Homework11 {
 		        inputB = Calculate1(n.NRight);
 		        Scanner input = new Scanner(System.in);
 
-			    Maths Maths = new Maths();
+			    Math Maths = new Math();
 		        
 		        switch (n.Value) {
 	            case "+": answer1 = Maths.add(inputA, inputB);
@@ -121,10 +121,8 @@ public class Homework11 {
 	                      break;
 	            case "^": answer1 = Maths.power(inputA, inputB);
 	                      break;
-	        }
-	  
-		       
-		        return answer;
+		        }
+				return answer;
 	}		
 	public static void main(String[] args) {
 		// Begin of arguments input sample
