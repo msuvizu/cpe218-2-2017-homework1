@@ -3,7 +3,7 @@ import java.util.Scanner;
 import java.util.Stack;
 
 
-public class Homework1 {
+public class Homework11 {
 	
 	private Stack<String> stack;
 	public static Stack<String> stack1 = new Stack<String>();
@@ -16,7 +16,8 @@ public class Homework1 {
 
 	
 	public String returnS;
-	public Homework1(String exp){
+	public Homework11(String exp){
+		
 		
 		String str = "";
 		postfixExp = exp;
@@ -61,8 +62,15 @@ public class Homework1 {
 				OneNode.Value.equalsIgnoreCase("/")) {
 			OneNode.NRight = new Node (stack1.pop());
 			Infix(OneNode.NLeft);
-			
+		}	
 		}
+		private boolean isOperator(String ch){
+			
+			String operators = "*/%+-";
+			if (operators.indexOf(ch) != -1)
+				return true;
+			else
+				return false;
 			
 	}
 	public static void Inorder (Node TwoNode) {
@@ -87,30 +95,36 @@ public class Homework1 {
 		}
 }
 		public static int Calculate1 (Node n) {
-			int Equalto = 0;
+			int answer = 0;
 
 		     
 		        if (n.Value.matches("[0-9]")){
 		            return Integer.valueOf(n.Value);
 		        }
-		        int left = Calculate1(n.NLeft);
-		        int right = Calculate1(n.NRight);
-			    switch (n.Value){
-		                case "+":Equalto = left + right;break;
-		                case "-":Equalto = left - right;break;
-		                case "*":Equalto = left * right;break;
-		                case "/":Equalto = left / right;break;
-		            }
-		        return Equalto;
-		}
+		        double inputA,inputB;
+		        double answer1 = 0;
+		        
+		        inputA = Calculate1(n.NLeft);
+		        inputB = Calculate1(n.NRight);
+		        Scanner input = new Scanner(System.in);
 
-	private boolean isOperator(String ch){
-		
-		String operators = "*/%+-";
-		if (operators.indexOf(ch) != -1)
-			return true;
-		else
-			return false;
+			    Maths Maths = new Maths();
+		        
+		        switch (n.Value) {
+	            case "+": answer1 = Maths.add(inputA, inputB);
+	                      break;
+	            case "-": answer1 = Maths.subtract(inputA, inputB);
+	                      break;
+	            case "*": answer1 = Maths.multiply(inputA, inputB);
+	                      break;
+	            case "/": answer1 = Maths.divide(inputA, inputB);
+	                      break;
+	            case "^": answer1 = Maths.power(inputA, inputB);
+	                      break;
+	        }
+	  
+		       
+		        return answer;
 	}		
 	public static void main(String[] args) {
 		// Begin of arguments input sample
@@ -119,7 +133,7 @@ public class Homework1 {
 			String input = args[0];
 			
 			String expression =("(2*(5-1))+(3*2)=14");
-			System.out.println("infix : "+expression);
+			System.out.println("infix:"+expression);
 			
 }
 	}}
